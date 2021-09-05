@@ -19,6 +19,7 @@ const Pagination = ({ data, RenderComponent }) => {
 
     function goToSpecificPage(event) {
         event.preventDefault();
+        if (event.target.value > pages || event.target.value < 1) return;
         let pageNumber = Number(event.target.value);
         setCurrentPage(pageNumber);
     }
