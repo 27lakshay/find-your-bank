@@ -7,6 +7,7 @@ import Banks from "./banks";
 import BankDetails from "./bankDetails";
 import Favourites from "./bankFavourites";
 import NotFound from "./common/notFound";
+import Homepage from "./homePage";
 
 export default function App() {
     return (
@@ -15,6 +16,7 @@ export default function App() {
             <main className="content-wrapper">
                 <Sidebar />
                 <Switch>
+                    <Route exact path="/" component={Homepage} />
                     <Route exact path="/all-banks" component={Banks} />
                     <Route exact path="/bank-details/:id" component={BankDetails} />
                     <Route exact path="/favourites" component={Favourites} />
