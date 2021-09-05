@@ -12,6 +12,7 @@ const Banks = () => {
     const [searchQuery, setSearchQuery] = useState("");
     const [searchEnabled, setSearchEnabled] = useState(false);
 
+    //initial hydration
     useEffect(() => {
         async function initialFetch() {
             // let t0 = performance.now();

@@ -1,22 +1,24 @@
+import { useContext } from "react";
+
+import NotyfContext from "../../context/notyfContext";
 import history from "../../history";
+import { addFavBank } from "../../utils/helpers";
 
 const BankDetail = ({ data }) => {
+    const notyf = useContext(NotyfContext);
+
     function handleClick(code) {
         history.push(`/bank-details/${code}`);
     }
-    function addToFav(code) {
-        let favBanks = JSON.parse(localStorage.getItem("favBanks"));
-        if (favBanks === null || favBanks === undefined) {
-            let temp = [];
-            temp.push(code);
-            localStorage.setItem("favBanks", JSON.stringify(temp));
-            return;
-        }
-        if (favBanks.find((item) => item.ifsc === code.ifsc) === undefined) {
-            favBanks.push(code);
-            localStorage.setItem("favBanks", JSON.stringify(favBanks));
-        } else alert("Already added to Favourites");
+    
+    //add single bank to favourites
+    function addToFav(data) {
+        let favBanks = addFavBank(data);
+        if (favBanks) {
+            notyf.success("Added to favourites");
+        } else notyf.error("Already added to favourites");
     }
+
     return (
         <div className="table-row">
             <div className="table-cell">

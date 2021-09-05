@@ -15,18 +15,3 @@ export const fetchData = () => {
     }
     return localData;
 };
-
-export const fetchBankDetail = () => {
-    let localData = getData(BASE_URL);
-    if (localData === null || localData === undefined) {
-        let response = fetch(BASE_URL)
-            .then((response) => response.json())
-            .then((json) => {
-                setData(BASE_URL, json);
-                return json;
-            })
-            .catch((error) => console.log(error));
-        return response;
-    }
-    return localData;
-};

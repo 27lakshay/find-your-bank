@@ -1,23 +1,27 @@
 import { useEffect, useState } from "react";
+
 import BankDetail from "./bankDetail";
+import { getFavBanks, removeFavBank } from "../../utils/helpers";
 
 const Favourites = () => {
     const [favBanks, setFavBanks] = useState([]);
 
+    //initial hydration
     useEffect(() => {
-        async function initialFetch() {
-            let data = JSON.parse(localStorage.getItem("favBanks"));
+        function initialFetch() {
+            let data = getFavBanks();
             if (data === null) return;
             setFavBanks(data);
         }
         initialFetch();
     }, []);
+
+    //remove single bank from favourites
     function removeFromFav(data) {
-        let favBanks = JSON.parse(localStorage.getItem("favBanks"));
-        favBanks = favBanks.filter((item) => item.ifsc !== data.ifsc);
-        setFavBanks(favBanks);
-        localStorage.setItem("favBanks", JSON.stringify(favBanks));
+        let newFavBanks = removeFavBank(data);
+        setFavBanks(newFavBanks);
     }
+
     return (
         <section className="content">
             <div className="section-header">
