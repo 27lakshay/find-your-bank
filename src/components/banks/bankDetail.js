@@ -5,7 +5,7 @@ const BankDetail = ({ data }) => {
         history.push(`/bank-details/${code}`);
     }
     function addToFav(code) {
-        let favBanks = JSON.parse(localStorage.getItem("favBanks")); 
+        let favBanks = JSON.parse(localStorage.getItem("favBanks"));
         if (favBanks === null || favBanks === undefined) {
             let temp = [];
             temp.push(code);
@@ -15,7 +15,7 @@ const BankDetail = ({ data }) => {
         if (favBanks.find((item) => item.ifsc === code.ifsc) === undefined) {
             favBanks.push(code);
             localStorage.setItem("favBanks", JSON.stringify(favBanks));
-        } else alert("already added to fav");
+        } else alert("Already added to Favourites");
     }
     return (
         <div className="table-row">

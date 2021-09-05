@@ -6,6 +6,7 @@ import Sidebar from "./common/sidebar";
 import Banks from "./banks";
 import BankDetails from "./bankDetails";
 import Favourites from "./bankFavourites";
+import NotFound from "./common/notFound";
 
 export default function App() {
     return (
@@ -17,6 +18,7 @@ export default function App() {
                     <Route exact path="/all-banks" component={Banks} />
                     <Route exact path="/bank-details/:id" component={BankDetails} />
                     <Route exact path="/favourites" component={Favourites} />
+                    <Route component={NotFound} />
                 </Switch>
             </main>
         </Router>
