@@ -37,6 +37,10 @@ const Pagination = ({ data, RenderComponent }) => {
     }, [dataLimit, data]);
 
     useEffect(() => {
+        setCurrentPage(1);
+    }, [data]);
+
+    useEffect(() => {
         window.scrollTo({ behavior: "smooth", top: "0px" });
     }, [currentPage]);
 

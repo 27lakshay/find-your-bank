@@ -48,8 +48,7 @@
     transition: background-color 0.3s ease;
     border-radius: 4px;
 }
-.sidebar ul li.active-tab {
-}
+
 .sidebar ul li:hover {
     background-color: rgba(0, 180, 216, 1);
 }

@@ -28,8 +28,7 @@ const Banks = () => {
     function handleSearch(banks, city, category, query) {
         let term = query.toUpperCase();
         let result = [];
-        result = banks.filter((bank) => bank[category].search(term) !== -1);
-        console.log(result);
+        result = banks.filter((bank) => bank[category].search(term) !== -1); 
         setFilterBanks(result);
     }
 
@@ -38,13 +37,11 @@ const Banks = () => {
             if (searchQuery === "") setFilterBanks(banks);
             else setSearchQuery("");
             return;
-        }
-        // debugger;
+        } 
         handleSearch(banks, selectedCity, selectedCategory, searchQuery);
     }, [searchQuery, selectedCategory]);
 
-    useEffect(() => {
-        // debugger
+    useEffect(() => { 
         if (selectedCity > 0 && selectedCategory !== "0") {
             setSearchEnabled(true);
         } else setSearchEnabled(false);
