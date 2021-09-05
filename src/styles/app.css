@@ -1,0 +1,283 @@
+.navbar {
+    height: 80px;
+    width: 100%;
+    background-color: rgba(2, 62, 138, 1);
+    padding: 1em 1.5em;
+    text-transform: uppercase;
+    color: #fff;
+    font: normal 600 28px/100% "Poppins";
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    position: fixed;
+    box-shadow: 0px 1px 6px #000;
+    z-index: 1000;
+    user-select: none;
+}
+
+.content-wrapper {
+    position: relative;
+    top: 80px;
+}
+.sidebar {
+    width: 300px;
+    position: fixed;
+    height: 100%;
+    background-color: rgba(72, 202, 228, 1);
+    padding: 1em;
+    box-shadow: 1px 0px 6px rgba(0, 0, 0, 0.6);
+    z-index: 900;
+    -webkit-box-shadow: 1px 0px 8px 1px rgba(0, 0, 0, 0.4);
+    -moz-box-shadow: 1px 0px 8px 1px rgba(0, 0, 0, 0.4);
+    box-shadow: 1px 0px 8px 1px rgba(0, 0, 0, 0.4);
+    user-select: none;
+}
+
+.sidebar ul {
+    padding: 0;
+    list-style: none;
+}
+
+.sidebar ul li {
+    color: rgba(0, 0, 0, 0.8);
+    cursor: pointer;
+    padding: 1em;
+    text-transform: capitalize;
+    font: normal 500 22px/100% "Poppins";
+    background-color: transparent;
+    transition: background-color 0.3s ease;
+    border-radius: 4px;
+}
+.sidebar ul li.active-tab {
+}
+.sidebar ul li:hover {
+    background-color: rgba(0, 180, 216, 1);
+}
+.content {
+    height: 100%;
+    min-height: calc(100vh - 80px);
+    position: relative;
+    width: calc(100% - 300px);
+    left: 300px;
+    background-color: rgba(202, 240, 248, 1);
+    padding: 2em 2em;
+}
+
+.content .section-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1em;
+    gap: 2em;
+}
+
+.content .section-header > :nth-child(1) {
+    margin-right: auto;
+    /* font: normal 600 20px/100% "Poppins";
+    user-select: none; */
+}
+
+.content .section-header select {
+    cursor: pointer;
+    border-radius: 4px;
+    padding: 0.5em 1em;
+    border: 2px solid rgba(3, 4, 94, 1);
+    outline: none;
+}
+
+.content .section-header input {
+    border-radius: 4px;
+    padding: 0.75em 1em;
+    border: 2px solid rgba(3, 4, 94, 1);
+    outline: none;
+}
+
+.pagination-wrapper {
+    text-align: center;
+    -webkit-box-shadow: 0px 3px 8px 1px rgba(0, 0, 0, 0.4);
+    -moz-box-shadow: 0px 3px 8px 1px rgba(0, 0, 0, 0.4);
+    box-shadow: 0px 3px 8px 1px rgba(0, 0, 0, 0.4);
+}
+
+.error {
+    padding: 2em;
+    text-transform: capitalize;
+    user-select: none;
+}
+
+.pagination-wrapper .pagination-column-header {
+    background-color: rgba(72, 202, 228, 1);
+    pointer-events: none;
+    -webkit-box-shadow: 0px 1px 8px 1px rgba(0, 0, 0, 0.4);
+    -moz-box-shadow: 0px 1px 8px 1px rgba(0, 0, 0, 0.4);
+    box-shadow: 0px 1px 8px 1px rgba(0, 0, 0, 0.4);
+    z-index: 500;
+    font: normal 500 20px/110% "Poppins";
+}
+.pagination-column-header .table-cell {
+    padding: 2em;
+}
+
+.pagination-options {
+    padding: 1em 0;
+    margin: 1em 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 2rem;
+    font: normal 500 18px/100% "Poppins";
+}
+.pagination-options > :first-child {
+    margin-right: auto;
+}
+.pagination-options input {
+    height: 32px;
+    width: 80px;
+    border-radius: 4px;
+    padding: 0.25em;
+    border: 2px solid rgba(3, 4, 94, 1);
+    outline: none;
+}
+
+.pagination-options button {
+    height: 32px;
+    cursor: pointer;
+    background-color: transparent;
+    padding: 0;
+    margin: 0;
+    outline: 0;
+    border: 0;
+}
+
+.pagination-options .page-nav {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.5em;
+    align-items: center;
+}
+
+.page-nav-btn.disabled {
+    opacity: 0.5;
+    pointer-events: none;
+    cursor: default;
+}
+.table-row {
+    display: grid;
+    grid-template-columns: repeat(4, 16%) 28% 8%;
+    border-bottom: 0.5px solid rgba(179, 179, 179, 0.4);
+    background-color: #fff;
+    position: relative;
+}
+.menu-wrapper {
+    position: relative;
+    z-index: 600;
+}
+
+.table-cell {
+    padding: 1em;
+    word-break: break-word;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.fav-banks-list > div {
+    margin-bottom: 1em;
+}
+.single-bank-details {
+    font: normal 400 20px/120% "Poppins";
+}
+
+.single-bank-details li {
+    margin-bottom: 1em;
+}
+.single-bank-details li span{
+    font: normal 500 22px/120% "Poppins";
+}
+/* dropdown styling */
+.dropbtn {
+    cursor: pointer;
+    background-color: transparent;
+    color: white;
+    padding: 1rem;
+    border: none;
+    transition: transform 0.3s ease;
+}
+
+.dropdown:hover .dropbtn {
+    transform: rotate(45deg);
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    list-style: none;
+    position: absolute;
+    padding: 0.5em;
+    right: 0;
+    background-color: #f1f1f1;
+    min-width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 4px;
+}
+
+.dropdown-content .dropdown-option {
+    cursor: pointer;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s ease;
+    border-radius: 4px;
+}
+
+.dropdown-content .dropdown-option:hover {
+    background-color: #ffb61b;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* tooltip styling */
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip .tooltiptext {
+    font: normal 400 16px/120% "Poppins";
+    padding: 8px;
+    visibility: hidden;
+    width: 220px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
